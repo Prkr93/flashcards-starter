@@ -18,7 +18,9 @@ describe('Round', function() {
   });
 
   it('should return the current card', function() {
-
+    const card = new Card(1);
+    const round = new Round(card);
+    expect(round.returnCard()).to.equal(card);
   });
 
   it('should be able to take a turn', function() {
