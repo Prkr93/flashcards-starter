@@ -1,10 +1,3 @@
-// Turn class should meet the following requirements:
-//
-// Instantiated with two arguments - a string (a user’s guess), and a Card object for the current card in play.
-// 4 different methods - returnGuess, returnCard, evaluateGuess, and giveFeedback
-// evaluateGuess: returns a boolean
-// giveFeedback - returns either ‘incorrect!’ or ‘correct!’
-
 const chai = require('chai');
 const expect = chai.expect;
 const Card = require('../src/Card');
