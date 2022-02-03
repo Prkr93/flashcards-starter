@@ -1,0 +1,25 @@
+// Turn class should meet the following requirements:
+//
+// Instantiated with two arguments - a string (a user’s guess), and a Card object for the current card in play.
+// 4 different methods - returnGuess, returnCard, evaluateGuess, and giveFeedback
+// evaluateGuess: returns a boolean
+// giveFeedback - returns either ‘incorrect!’ or ‘correct!’
+
+const chai = require('chai');
+const expect = chai.expect;
+const Card = require('../src/Card');
+const Turn = require('../src/Turn');
+
+describe('Turn', function() {
+
+  it('should be a function', function() {
+    const turn = new Turn();
+    expect(Turn).to.be.a('function');
+  });
+
+  it('should be an instance of Turn', function() {
+    const turn = new Turn();
+    expect(turn).to.be.an.instanceof(Turn);
+  });
+
+});
