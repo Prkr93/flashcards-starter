@@ -22,4 +22,14 @@ describe('Turn', function() {
     expect(turn).to.be.an.instanceof(Turn);
   });
 
+  it('should be able to return a guess', function() {
+    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    const guess = 'array';
+    const turn = new Turn(guess, card);
+    expect(turn.returnGuess()).to.equal('array');
+  });
+
+  
+
+
 });
