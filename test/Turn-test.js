@@ -29,7 +29,12 @@ describe('Turn', function() {
     expect(turn.returnGuess()).to.equal('array');
   });
 
-  
+  it('should be able to return a card', function() {
+    const card = new Card(2, 'What is my favorite color?', ['green', 'blue', 'red'], 'blue');
+    const guess = 'blue';
+    const turn = new Turn(guess, card);
+    expect(turn.returnCard()).to.equal(card);
+  });
 
 
 });
