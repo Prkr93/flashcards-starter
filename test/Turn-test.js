@@ -47,4 +47,16 @@ describe('Turn', function() {
     expect(turn1.evaluateGuess()).to.equal(true);
     expect(turn2.evaluateGuess()).to.equal(false);
   });
+
+  it('should be able to give the user feedback', function() {
+    const card1 = new Card(2, 'What is my favorite color?', ['green', 'blue', 'red'], 'blue');
+    const guess1 = 'blue';
+    const turn1 = new Turn(guess1, card1);
+    const card2 = new Card(3, 'What is my favorite food?', ['celery', 'pizza', 'french fries'], 'pizza');
+    const guess2 = 'celery';
+    const turn2 = new Turn(guess2, card2);
+
+    expect(turn1.giveFeedback()).to.equal('correct!');
+    expect(turn2.giveFeedback()).to.equal('incorrect!');
+  });
 });
