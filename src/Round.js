@@ -15,6 +15,11 @@ class Round {
     this.turn.giveFeedback();
     this.turnID += 1;
   }
+  calculatePercentCorrect() {
+    const total = this.turnID - 1;
+    const correct = total - this.incorrectCards.length;
+    return `${ correct/total*100 }% correct!`;
+  }
 }
 
 module.exports = Round;

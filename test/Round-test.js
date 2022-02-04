@@ -52,9 +52,24 @@ describe('Round', function() {
     round.takeTurn();
     expect(round.incorrectCards.length).to.equal(1);
   });
-  // it('should be able to calculate and return the percent correct', function() {
-  //
-  // });
+
+  it('should be able to calculate and return the percent correct', function() {
+    const card = new Card(1, 'What is my favorite color?', ['green', 'blue', 'red'], 'blue');
+    const guess = 'blue';
+    const turn = new Turn(guess, card);
+    const round = new Round(turn);
+    round.takeTurn();
+    expect(round.calculatePercentCorrect()).to.equal('100% correct!');
+  });
+
+  it('should be able to calculate and return the percent correct', function() {
+    const card = new Card(1, 'What is my favorite color?', ['green', 'blue', 'red'], 'blue');
+    const guess = 'red';
+    const turn = new Turn(guess, card);
+    const round = new Round(turn);
+    round.takeTurn();
+    expect(round.calculatePercentCorrect()).to.equal('0% correct!');
+  });
   //
   // it('should print something when the round is over', function() {
   //
